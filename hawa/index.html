@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniels</title>
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- le HEADER -->
+    <header class=" min-h-screen bg-cover bg-center relative" style="background-image: url('images/img.jpg');">
+        <div class="absolute inset-0 bg-black/70">
+
+            <!--  le navbar -->
+            <nav id="navbar"  class="flex fixed  top-0 left-0 w-full z-50 justify-between items-center text-white py-6 px-10 md:px-10">
+
+                <div class="text-2xl font-bold">Daniels</div>
+                <button id="menuBtn" class="md:hidden text-2xl">
+                    ☰
+                </button>
+                <div id="menu" class=" md:flex flex-col md:flex-row gap-6 md:gap-8  hidden  ">
+
+                    <a href="#">hawa</a>
+                    <a href="#about">About</a>
+                    <a href="#service">Service</a>
+                    <a href="#work">Work</a>
+                    <a href="#client">Client</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                  
+                <div id="mobileMenu"
+                    class="mt-20 mb-20 fixed inset-0 bg-white text-black flex flex-col items-center justify-center  space-y-6 transform translate-x-full transition duration-300">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#service">Service</a>
+                    <a href="#work">Work</a>
+                    <a href="#client">Client</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+
+            <!--  la section de Home -->
+            <section class="flex flex-col items-center justify-center text-white text-center px-4 h-full gap-4">
+                <h1 class="text-4xl md:text-6xl font-bold">Hello</h1>
+                <p  class="text-8xl md:text-5xl">
+                    I am <span  id="type"  class="font-semibold"></span>
+                </p>
+
+                <div class="flex gap-4 text-xl">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                    <i class="fab fa-behance"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </section>
+
+        </div>
+    </header>
+
+    <!--  la section de ABOUT -->
+    <section id="about" class="py-10 px-6 md:px-20 flex flex-col md:flex-row items-center gap-8">
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="images/hero.jpg" class="w-full max-w-sm md:max-w-md h-auto rounded-lg">
+        </div>
+        <div class="w-full md:w-1/2 text-center md:text-left gap-6  flex flex-col">
+            <h1 class="text-5xl font-bold ">About Me</h1>
+            <p class="text-gray-500 ">UI / UX DESIGNER & WEB DEVELOPER</p>
+            <p class="text-gray-600 ">
+                I am Jerry Daniels Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever It has survived not only five centuries,
+                but also the leap in to electronic typesetting, remaining essentially unchanged.
+                It was popularised in the 1960 with the release of Letraset sheets containing.
+            </p>
+            <div class=" flex flex-col gap-6 ">
+                <div class="w-full bg-gray -300 h-6 rounded ">
+                    <div class="bg-black h-6 rounded justify-between flex px-4" style="width: 95%">
+                        <span class="text-white">Web Designe</span>
+                        <span class="text-white">95%</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-300 h-6 rounded ">
+                    <div class="bg-black h-6 rounded justify-between flex px-4" style="width: 80%">
+                        <span class="text-white">Branding</span>
+                        <span class="text-white">80%</span>
+                    </div>
+                </div>
+                <div class="w-full bg-gray-300 h-6 rounded ">
+                    <div class="bg-black h-6 rounded justify-between flex px-4" style="width: 90%">
+                        <span class="text-white">Development</span>
+                        <span class="text-white">90%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="border h-10 p-2 bg-black text-white border-black hover:bg-white hover:text-black ">Download
+                    C.V</button>
+                <button
+                    class="border h-10 p-2 bg-white text-black border-black hover:bg-black hover:text-white">Conctact
+                    Me</button>
+            </div>
+    </section>
+    <!-- la section de service -->
+    <section id="service" class="bg-gray-100 py-20 px-6">
+        <h2 class="text-5xl font-bold text-center mb-2">Service</h2>
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+            <!-- card 1 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center  transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100  flex items-center justify-center   mt-4 shrink-0 hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-laptop text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Web Design</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+            <!-- card 2 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center  transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mt-4 shrink-0 hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-bullhorn  text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Branding</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+            <!-- card 3 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100  flex items-center justify-center mt-4 shrink-0 hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-umbrella fa-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Development</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+            <!-- card 4 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center  transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100  flex items-center justify-center mt-4 shrink-0 hover:bg-black hover:text-white ">
+                    <i class="fa-solid fa-diamond fa-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Creative Design</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+            <!-- card 5 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center  transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mt-4  shrink-0 hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-desktop  text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Fully Responsive</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+            <!-- card 6 -->
+            <div
+                class="bg-white border rounded-2xl p-6 flex flex-col items-center gap-4 text-center  transition-transform duration-300">
+                <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mt-4 shrink-0 hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-camera  text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold">Retina Ready</h3>
+                <p class="text-gray-500 text-sm ">Lorem Ipsum is simply dummy text of the Lorem Ipsum has been the
+                    industry's standard dummy text ever.</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- LA SECTION DU WORK -->
+    <section id="work" class="py-20 px-6 bg-white">
+
+        <h2 class="text-5xl font-bold text-center mb-2">Portfolio</h2>
+
+        <div class="flex flex-wrap gap-3 justify-center mb-10">
+            <button class=" font-semibold text-sm ">All</button>
+            <button class="font-semibold text-sm">Brand</button>
+            <button class="font-semibold text-sm">Design</button>
+            <button class="font-semibold text-sm">Graphic</button>
+        </div>
+
+        <!-- CARDS DU SECTION DE WORK -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6  mx-auto ">
+            <!-- CARD1 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/1 (2).jpg"
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 border-solid flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                     <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                     </span>
+                </div>
+            </div>
+           <!-- CARD2 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/2 (1).jpg" alt=""
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+           <!-- CARD3 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/3.jpg" alt=""
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <!-- CARD4 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/4 (1).jpg" alt=""
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <!-- CARD5 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/5.jpg" alt=""
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+             <!-- CARD6 DU SECTION DE WORK -->
+            <div class="relative overflow-hidden rounded-xl group">
+                <img src="images/6.jpg" alt=""
+                    class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                <div
+                    class="absolute inset-0 bg-white border border-gray-500 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-black font-bold text-sm ">WEB DESIGN
+                        <div class="flex gap-2">
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border  flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-paperclip  text-white hover:text-black"></i>
+                            </div>
+                            <div
+                                class="rounded-full w-7 h-7 bg-black border flex items-center justify-center hover:bg-white hover:text-black">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white hover:text-black"></i>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- LA SECTION DU CLIENT -->
+    <section id="client" class="min-h-screen bg-gray-200 py-16 flex flex-col items-center">
+        
+        <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-center">Testimonials</h1>
+        <!-- INFORMATION DU SECTION DE CLIENT -->
+        <div class="flex flex-col items-center gap-4 mt-8 px-4  text-center">
+            <img src="images/1.jpg" class="w-20 h-20 rounded-full object-cover">
+            <p class="text-sm  text-gray-500">
+                Lorem Ipsum has been the industry's standard dummy text ever since when an unknown printer took a galley
+                of type <br>and scrambled it to make a type specimen book.
+            </p>
+            <h2 class="font-semibold">Alex Smith</h2>
+            <p class="text-sm text-gray-500">Envato Customer</p>
+
+        </div>
+
+<!-- CARDS DU SECTION DE CLIENT-->
+        <div class="bg-white w-full mt-10 py-10 px-4 sm:px-6 md:px-10 lg:px-20">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <!-- CARD1 DU SECTION CLIENT  -->
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-users text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold">850</h1>
+                    <p class="text-sm text-gray-500">Happy Customers</p>
+                </div>
+        <!-- CARD2 DU  SECTION DE CLIENT-->
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-thumbs-up text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold">230</h1>
+                    <p class="text-sm text-gray-500">Projects</p>
+                </div>
+        <!-- CARD3 DU SECTION DE CLIENT -->
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-bullhorn text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold">9450</h1>
+                    <p class="text-sm text-gray-500">Lines of Code</p>
+                </div>
+        <!-- CARD4 DU SECTION DE CLIENT -->
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-down text-2xl"></i>
+                    <h1 class="text-xl md:text-2xl font-bold">780</h1>
+                    <p class="text-sm text-gray-500">Downloads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- la section du blog -->
+    <section id="blog" class="min-h-screen bg-gray-200 py-18">
+        <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold text-center mb-10">Our Blog</h1>
+
+        <!-- CARDS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-10 lg:px-20">
+            <!-- CARD1 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300">
+                <img src="images/2.jpg" class="w-full h-50 object-cover hover:scale-110 transition duration-300">
+                <div class="p-4">
+                    <span class="text-sm text-gray-500">Trends</span>
+                    <h1 class="text-lg sm:text-xl font-bold mt-2">Master These Awesome New Skills in March 2018</h1>
+                    <p class="text-sm mt-3 underline">Read More</p>
+                </div>
+            </div>
+
+            <!-- CARD2 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300">
+                <img src="images/1 (1).jpg" class="w-full h-50 object-cover hover:scale-110 transition duration-300">
+                <div class="p-4">
+                    <span class="text-sm text-gray-500">Trends</span>
+                    <h1 class="text-lg sm:text-xl font-bold mt-2"> Master These Awesome New Skills in March 2018</h1>
+                    <p class="text-sm mt-3 underline">Read More</p>
+                </div>
+            </div>
+            <!-- CARD3 -->
+            <div class="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition duration-300">
+                <img src="images/4.jpg" class="w-full h-50 object-cover hover:scale-110 transition duration-300">
+
+                <div class="p-4">
+                    <span class="text-sm text-gray-500">Trends</span>
+                    <h1 class="text-lg sm:text-xl font-bold mt-2"> Master These Awesome New Skills in March 2018</h1>
+                    <p class="text-sm mt-3 underline">Read More</p>
+                </div>
+            </div>
+
+        </div>
+    <!-- LA SECTION DU CONTACT -->
+    </section>
+    <section id="contact" class="bg-gray-100 py-16 gap-8 flex flex-col">
+        <h1 class="text-5xl font-bold text-center">Contact Us.</h1>
+        <!-- INFORMATION DU CONTACT -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center px-6">
+            <div class="flex flex-col items-center gap-3">
+                <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center  hover:bg-black hover:text-white transition duration-300">
+                    <i class="fa-solid fa-location-arrow text-xl"></i> 
+                </div>
+                <h2 class="font-bold text-xl">Address</h2>
+                <p class="text-gray-500 text-sm">
+                    6834 Hollywood Blvd - Los Angeles CA
+                </p>
+            </div>
+             <div class="flex flex-col items-center gap-4">
+                <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition duration-300">
+                    <i class="fa-solid fa-envelope text-xl "></i>
+                </div>
+                <h2 class="font-bold text-xl ">Email</h2>
+                <p class="text-gray-500 text-sm">
+                    Support@website.com
+                </p>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center  hover:bg-black hover:text-white transition duration-300">
+                    <i class="fa-solid fa-phone text-xl"></i>
+                </div>
+                <h2 class="font-bold text-xl">Phone</h2>
+                <p class="text-gray-500 text-sm">
+                    +20 010 2517 8918
+                </p>
+            </div>
+        </div>
+        <!-- formulaire du contact -->
+        <div class=" mt-12 px-32">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" placeholder="Name" class="w-full p-3 rounded bg-gray-200 outline-none  ">
+                <input type="email" placeholder="Email" class="w-full p-3 rounded bg-gray-200 outline-none ">
+            </div>
+            <textarea rows="6" placeholder="Message"
+                class="w-full mt-4 p-3 rounded bg-gray-200 outline-none  "></textarea>
+            <button class="mt-6 bg-black text-white px-6 py-3 border border-black rounded hover:bg-white hover:text-black transition duration-300">
+                Submit
+            </button>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-black h-20 flex items-center justify-center">
+        <h1 class="text-gray-500 ">Copy Right 2018 By Daniels All Rigths Reserved</h1>
+    </footer>
+                <!-- la modal -->
+    <!-- <div id="mobileMenu"class="fixed inset-0 bg-white/80 text-black flex flex-col items-center justify-center space-y-6 transform translate-x-full transition duration-300">
+        <button id="closeMenu" class="absolute top-5 right-5 text-3xl">
+        ☰
+        </button>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+        <a href="#work">Work</a>
+        <a href="#client">Client</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </div> -->
+    <script src="index.js"></script>
+</body>
+
+</html>
+
