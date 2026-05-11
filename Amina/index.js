@@ -12,7 +12,7 @@ const btn = document.getElementById("menuBtn");
         });
 
 new Typed("#type", {
-      strings: ["Déveloper", "Designer", "Larry Dianiels"],
+      strings: ["Aminata", "Déveloper", "Designer"],
       typeSpeed: 60,
       backSpeed: 40,
       loop: true
