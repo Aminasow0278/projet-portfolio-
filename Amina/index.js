@@ -1,5 +1,5 @@
-const btn = document.getElementById("button");
-        const menu = document.getElementById("mobile");
+const btn = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
         const closeBtn = document.getElementById("closeMenu");
 
         btn.addEventListener("click", () => {
@@ -11,7 +11,6 @@ const btn = document.getElementById("button");
             });
         });
 
-
 new Typed("#type", {
       strings: ["Déveloper", "Designer", "Larry Dianiels"],
       typeSpeed: 60,
@@ -20,7 +19,7 @@ new Typed("#type", {
  });
 
 
- const navbar = document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", function () {
   if (window.scrollY > 100) {
@@ -31,3 +30,4 @@ window.addEventListener("scroll", function () {
      navbar.classList.add("text-white");
   }
 });
+
