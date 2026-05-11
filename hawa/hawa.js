@@ -1,3 +1,5 @@
+
+
 const btn = document.getElementById("menuBtn");
         const menu = document.getElementById("mobileMenu");
         const closeBtn = document.getElementById("closeMenu");
@@ -11,16 +13,13 @@ const btn = document.getElementById("menuBtn");
             });
         });
 
-        
-new Typed("#type", {
-      strings: ["Aminata", "Déveloper", "Designer"],
+       new Typed("#type", {
+      strings: ["Déveloper", "Designer", "HAWA SOW"],
       typeSpeed: 60,
       backSpeed: 40,
       loop: true
- });
-
-
-const navbar = document.getElementById("navbar");
+     });
+    const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", function () {
   if (window.scrollY > 100) {
@@ -33,6 +32,29 @@ window.addEventListener("scroll", function () {
 });
 
 
+//animation du fittre des 
+const buttons = document.querySelectorAll("#work button");
+const items = document.querySelectorAll("#work .grid > div");
+const filters = ["all", "brand", "design", "graphic"];
+items.forEach((item, index) => {
+  const categories = ["brand", "design", "graphic"];
+  item.classList.add(categories[index % 3]);
+});
+buttons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const filter = filters[index];
+    items.forEach(item => {
+      if (filter === "all") {
+        item.style.display = "block";
+      } else {
+        item.style.display = item.classList.contains(filter)
+          ? "block"
+          : "none";
+      }
+    });
+  });
+});
+ 
 // l'animation des chiffres statistiques
     const counters = document.querySelectorAll(".counter");
     let started = false;
