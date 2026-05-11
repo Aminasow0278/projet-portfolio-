@@ -250,46 +250,132 @@ style="background-image: url('images/pexels-hike-1836600.jpg');">
     </div>
   </section>
   <!-- section Testimonials -->
-   <section id="client" class="bg-gray-100">
-    <h1 class="text-center font-bold text-4xl mt-20 mb-20 pt-20">Testimonials.</h1>
-    <div class="flex justify-center"> 
-      <img src="images/photo.jpg" class="w-400 h-20  borber rounded-full w-19 h-16 bg-gray-100 mb-5" alt="photo">
-       </div>
-       <div class="flex justify-center">
-         <p class="text-center text-gray-500 mb-6 font-semibold">lorem Ipsum has been the industry's standard dummy text ever since the
-      when an unknown printer took a galley of type and <br> scrambled it to make a
-      type specimen book. 
-    </p>
-       </div>
-    <h3 class="flex  justify-center font-bold">Alex Smith</h3>
-    <p class="flex justify-center font-bold text-gray-500 pb-20">Envato Customer</p>
-   </section>
+ 
+<section id = "client"
+ classe = "h-screen bg-gray-200 py-5 flex flex-col justify-center items-center overflow-hidden" >
 
-   <!-- section icone -->
-     <section id="clients" class="py-10 px-4 md:px-10">
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
-    <div class="flex flex-col items-center">
-        <img src="images/m1.png" class="w-19 h-20 pl-7" alt="photo">
-        <p class="font-bold text-2xl text-center m-3">850</p>
-        <p class="text-gray-500 font-bold">Happy Customers</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <img src="images/m2.png" class="w-19 h-20 pl-7" alt="photo">
-        <p class="font-bold text-2xl text-center m-3">230</p>
-        <p class="text-gray-500 font-bold">Complete Projects </p>
-      </div>
-      <div class="flex flex-col items-center"> 
-        <img src="images/m3.png" class="w-19 h-16 mt-3 pl-7" alt="photo">
-        <p class="font-bold text-2xl text-center m-3">9450</p>
-        <p class="text-gray-500 font-bold">Line Of Code</p>
-      </div>
-      <div class="flex flex-col items-center"> 
-        <img src="images/m4.png" class="w-19 h-20 pl-7" alt="photo">
-        <p class="font-bold text-2xl text-center m-3">780</p>
-        <p class="text-gray-500 font-bold">Files Downloaded</p>
-      </div>
-      </div>
-    </section>
+ <!-- Titre -->
+ <h1 class = "text-2xl sm:text-3xl md:text-5xl font-bold text-center" >
+ Témoignages
+ </h1 >
+
+ <!-- Conteneur de carrousel -->
+ <div class = "w-full  overflow-hidden mt-10  items-center " >
+
+ <!-- Diapositives -->
+ <div class = "slides flex transition-transform duration-500" >
+
+ <!-- Diapositive 1 -->
+ <div class = "min-w-full flex flex-col items-center  gap-2 px-2 text-center" >
+
+ <img src = "images/photo.jpg"
+ class = "w-24 h-24 rounded-full object-cover " >
+
+ <p class = "text-sm text-gray-500" >
+ Lorem Ipsum est le texte factice standard de l'industrie
+ Depuis lors, un imprimeur inconnu a pris une galée de caractères.
+ et l'a mélangé pour en faire un livre de spécimens de caractères.
+ </p >
+
+ <h2 class = "font-semibold" >
+ Alex Smith
+ </h2 >
+
+ <p class = "text-sm text-gray-500" >
+ Client Envato
+ </p >
+
+ </div >
+
+ <!-- Diapositive 2 -->
+ <div class = "min-w-full flex flex-col items-center gap-4 px-4 text-center" >
+
+ <img src = "images/photo.jpg"
+ class = "w-24 h-24 rounded-full object-cover" >
+
+ <p class = "text-sm text-gray-500" >
+ Service exceptionnel et assistance professionnelle.
+ J'ai vraiment apprécié travailler avec cette équipe.
+ </p >
+
+ <h2 class = "font-semibold" >
+ Sarah Lee
+ </h2 >
+
+ <p class = "text-sm text-gray-500" >
+ Concepteur d'interface utilisateur
+ </p >
+
+ </div >
+
+ <!-- Diapositive 3 -->
+ <div class = "min-w-full flex flex-col items-center gap-2 px-2 text-center" >
+
+ <img src = "images/photo.jpg"
+ class = "w-24 h-24 rounded-full object-cover" >
+
+ <p class = "text-sm text-gray-500" >
+ Excellente expérience et livraison très rapide.
+ Fortement recommandé à tous.
+ </p >
+
+ <h2 class = "font-semibold" >
+ John Doe
+ </h2 >
+
+ <p class = "text-sm text-gray-500" >
+ Développeur web
+ </p >
+
+ </div >
+
+ </div >
+
+ </div >
+
+ <!-- Points -->
+ <div class = "flex gap-3 mt-6 justify-center" >
+
+ <span class = "dot w-3 h-3 rounded-full bg-black" ></span >
+
+ <span class = "dot w-3 h-3 rounded-full bg-gray-400" ></span >
+
+ <span class = "dot w-3 h-3 rounded-full bg-gray-400" ></span >
+
+ </div >
+
+ </section >
+
+ <!-- CARTES DU SECTION DE CLIENT-->
+ <div class = "bg-white w-full mt-10 py-10 px-4 sm:px-6 md:px-10 lg:px-20" >
+ <div id ="stats" class = "grid grid-cols-2 md:grid-cols-4 gap-8 text-center h-40">
+ <!-- CARTE1 DU SECTION CLIENT -->
+ <div class = "flex flex-col items-center gap-2">
+ <i class = "fa-solid fa-users text-2xl"></i>
+ <h1 class ="counter text-xl md:text-2xl font-bold" data-target = "850" >850</h1>
+ <p class =" text-sm text-gray-500">Clients satisfaits</p>
+ </div >
+ <!-- CARD2 DU SECTION DE CLIENT-->
+ <div class = "flex flex-col items-center gap-2">
+ <i class = "fa-solid fa-thumbs-up text-2xl"></i>
+ <h1 class ="counter text-xl md: text-2xl font-bold" data-target ="230">230</h1>
+ <p class ="text-sm text-gray-500">Projets</p>
+ </div >
+ <!-- CARD3 DU SECTION DE CLIENT -->
+ <div class = " flex flex-col items-center gap-2">
+ <i class = "fa-solid fa-bullhorn text-2xl"></i>
+ <h1 class ="counter text-xl md:text-2xl font-bold" data-target ="9450">9450</h1>
+ <p class ="text-sm text-gray-500">Lignes de code</p>
+ </div>
+ <!-- CARD4 DU SECTION DE CLIENT -->
+ <div class = "flex flex-col items-center gap-2" >
+ <i class = "fa-solid fa-cloud-arrow-down text-2xl"></i>
+ <h1 class ="counter text-xl md:text-2xl font-bold" data-target ="780">780</h1>
+ <p class =" text-sm text-gray-500">Téléchargements</p>
+ </div>
+ </div>
+ </div>
+
   <!-- section bloc -->
    <section class="bg-gray-100">
     <h1 class="text-center font-bold text-3xl md:text-5xl pt-10 md:pt-20 pb-6 md:pb-10">Our Blog.</h1> 
