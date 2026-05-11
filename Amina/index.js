@@ -11,6 +11,7 @@ const btn = document.getElementById("menuBtn");
             });
         });
 
+        
 new Typed("#type", {
       strings: ["Aminata", "Déveloper", "Designer"],
       typeSpeed: 60,
