@@ -2,7 +2,7 @@
 
 const rotatingText = document.getElementById('rotating-text');
 const cursor = document.querySelector('.cursor');
-const texts = ['Developer', 'Designer', 'Larry Daniels'];
+const texts = ['Developer', 'Designer', 'Mohamed Bakhoum'];
 let currentTextIndex = 0;
 let currentCharIndex = texts[2].length; 
 let isTyping = false;
