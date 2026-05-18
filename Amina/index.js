@@ -82,21 +82,9 @@ window.addEventListener("scroll", function () {
             `translateX(-${index * 100}%)`;
 
 
-        // Reset all dots
-        // dots.forEach(dot => {
-
-        //     dot.classList.remove('bg-black');
-
-        //     dot.classList.add('bg-gray-400');
-
-        // });
-
-
-        // Active dot
-        // dots[index].classList.remove('bg-gray-400');
-
-        // dots[index].classList.add('bg-black');
     }
+
+    
     setInterval(() => {
         index++;
         if(index >= total){
@@ -104,3 +92,61 @@ window.addEventListener("scroll", function () {
         }
         updateCarousel();
     }, 3000);
+
+
+  // wwwwwwwwwww
+
+
+  // ===== Modal vidéo =====
+
+const openVideoModalBtn = document.getElementById("openVideoModalBtn");
+const closeVideoModalBtn = document.getElementById("closeVideoModalBtn");
+const videoModal = document.getElementById("videoModal");
+const youtubeIframe = document.getElementById("youtubeIframe");
+
+// Exemple :
+// URL : https://www.youtube.com/watch?v=dQw4w9WgXcQ
+// id = dQw4w9WgXcQ
+
+// const youtubeId = "bP4e5Kwz8EE";
+
+const videoUrl = "https://youtu.be/bP4e5Kwz8EE?t=1";
+
+function openModal() {
+  videoModal.classList.remove("hidden");
+  videoModal.classList.add("flex");
+
+  youtubeIframe.src = videoUrl;
+}
+
+function closeModal() {
+  videoModal.classList.add("hidden");
+  videoModal.classList.remove("flex");
+
+  youtubeIframe.src = "";
+}
+
+if (openVideoModalBtn) {
+  openVideoModalBtn.addEventListener("click", openModal);
+}
+
+if (closeVideoModalBtn) {
+  closeVideoModalBtn.addEventListener("click", closeModal);
+}
+
+if (videoModal) {
+  videoModal.addEventListener("click", (e) => {
+    if (e.target === videoModal) {
+      closeModal();
+    }
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "Escape" &&
+    !videoModal.classList.contains("hidden")
+  ) {
+    closeModal();
+  }
+});
