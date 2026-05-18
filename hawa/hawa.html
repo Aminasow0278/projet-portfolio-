@@ -17,50 +17,100 @@
         <div class="absolute inset-0 bg-black/70">
 
             <!--  le navbar -->
-            <nav id="navbar"  class="flex fixed  top-0 left-0 w-full z-50 justify-between items-center text-white py-6 px-10 md:px-10">
+            <nav id="navbar"  class="flex fixed md:top-0 bottom-0 md:bottom-auto left-0 w-full z-50 justify-between items-center text-white bg-black/60 py-4 px-6 md:px-10">
 
-                <div class="text-2xl font-bold">Daniels</div>
-                <button id="menuBtn" class="md:hidden text-2xl">
-                    ☰
-                </button>
-                <div id="menu" class=" md:flex flex-col md:flex-row gap-6 md:gap-8  hidden  ">
+                  <div class="text-2xl font-bold">Daniels</div>
 
-                    <a href="#">home</a>
-                    <a href="#about">About</a>
-                    <a href="#service">Service</a>
-                    <a href="#work">Work</a>
-                    <a href="#client">Client</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                  
-                <div id="mobileMenu"
-                    class="mt-20 mb-20 fixed inset-0 bg-white text-black flex flex-col items-center justify-center  space-y-6 transform translate-x-full transition duration-300">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#service">Service</a>
-                    <a href="#work">Work</a>
-                    <a href="#client">Client</a>
-                    <a href="#blog">Blog</a>
-                    <a href="#contact">Contact</a>
-                </div>
+      <button id="menuBtn" class="md:hidden text-2xl">
+        ☰
+      </button>
+
+      <!-- Desktop menu -->
+      <div id="menu" class="md:flex flex-col md:flex-row gap-6 md:gap-8 hidden">
+        <a href="#">home</a>
+        <a href="#about">About</a>
+        <a href="#service">Service</a>
+        <a href="#work">Work</a>
+        <a href="#client">Client</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <!-- Mobile overlay menu -->
+      <div
+        id="mobileMenu"
+        class="mt-20 mb-20 fixed inset-0 bg-white text-black flex flex-col items-center justify-center space-y-6 transform translate-x-full transition duration-300"
+      >
+        <a href="#home" class="hover:underline">Home</a>
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#service" class="hover:underline">Service</a>
+        <a href="#work" class="hover:underline">Work</a>
+        <a href="#client" class="hover:underline">Client</a>
+        <a href="#blog" class="hover:underline">Blog</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </div>
             </nav>
+              <!-- HOME -->
+    <section class="flex flex-col items-center justify-center text-white text-center px-4 h-full gap-4 pt-28 pb-28 md:pb-0">
+      <h1 class="text-4xl md:text-6xl font-bold">Hello</h1>
 
-            <!--  la section de Home -->
-            <section class="flex flex-col items-center justify-center text-white text-center px-4 h-full gap-4">
-                <h1 class="text-4xl md:text-6xl font-bold">Hello</h1>
-                <p  class="text-4xl md:text-5xl">
-                    I am <span  id="type"  class="font-semibold"></span>
-                </p>
+      <p class="text-4xl md:text-5xl">
+        I am <span id="type" class="font-semibold"></span>
+      </p>
 
-                <div class="flex gap-4 text-xl">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-linkedin"></i>
-                    <i class="fab fa-behance"></i>
-                    <i class="fa-brands fa-youtube"></i>
-                </div>
-            </section>
+      <!-- Social -->
+      <div class="flex gap-4 text-xl">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fab fa-behance"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+
+      <!-- Bouton + place juste en dessous de I am... -->
+      <div class="mt-4">
+        <button
+          id="openVideoModalBtn"
+          class="px-5 py-2 rounded bg-red-500 hover:bg-red-700 transition text-white">
+          Voir la vidéo
+        </button>
+      </div>
+    </section>
+
+    <!-- MODAL VIDÉO (YouTube iframe) -->
+    <div
+      id="videoModal"
+      class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/70 p-4"
+    >
+      <div class="w-full max-w-3xl rounded-xl bg-gray-900 p-3">
+        <div class="flex items-center justify-between px-2 py-2">
+          <h3 class="text-white font-semibold">Vidéo</h3>
+          <button
+            id="closeVideoModalBtn"
+            class="text-white text-2xl leading-none hover:opacity-80"
+            aria-label="Fermer">
+            
+          </button>
+        </div>
+
+        <div class="aspect-video w-full px-2 pb-2">
+          <iframe
+            id="youtubeIframe"
+            class="w-full h-full rounded-lg"
+            src=""
+            title="YouTube video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+
+                
+   
+
 
         </div>
     </header>
@@ -444,7 +494,6 @@
  </div>
  </div>
  </div>
-
 
     <!-- la section du blog -->
     <section id="blog" class="min-h-screen bg-gray-200 py-18">

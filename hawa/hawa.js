@@ -126,3 +126,40 @@ buttons.forEach((button, index) => {
         }
         updateCarousel();
     }, 3000);
+
+
+    // ===== Modal vidéo =====
+  const openVideoModalBtn = document.getElementById("openVideoModalBtn");
+  const closeVideoModalBtn = document.getElementById("closeVideoModalBtn");
+  const videoModal = document.getElementById("videoModal");
+  const youtubeIframe = document.getElementById("youtubeIframe");
+
+  // Remplace par TON id YouTube
+  // Exemple: URL https://www.youtube.com/watch?v=dQw4w9WgXcQ  => id = dQw4w9WgXcQ
+  const youtubeId = "dQw4w9WgXcQ";
+  const videoUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+
+  function openModal() {
+    videoModal.classList.remove("hidden");
+    videoModal.classList.add("flex");
+    youtubeIframe.src = videoUrl; // démarre
+  }
+
+  function closeModal() {
+    videoModal.classList.add("hidden");
+    videoModal.classList.remove("flex");
+    youtubeIframe.src = ""; // stop
+  }
+
+  if (openVideoModalBtn) openVideoModalBtn.addEventListener("click", openModal);
+  if (closeVideoModalBtn) closeVideoModalBtn.addEventListener("click", closeModal);
+
+  videoModal?.addEventListener("click", (e) => {
+    if (e.target === videoModal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !videoModal.classList.contains("hidden")) {
+      closeModal();
+    }
+  }); 
