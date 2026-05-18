@@ -2,32 +2,29 @@
 
 const rotatingText = document.getElementById('rotating-text');
 const cursor = document.querySelector('.cursor');
-const texts = ['Developer', 'Designer', 'Larry Daniels'];
+const texts = ['Developer', 'Designer', 'Mouhamed Bakhoum'];
 let currentTextIndex = 0;
-let currentCharIndex = texts[2].length; 
+let currentCharIndex = texts[2].length;
 let isTyping = false;
 let isErasing = true;
 
 
 rotatingText.textContent = texts[2];
 
-function typeWriter() 
-{
+function typeWriter() {
   const currentText = texts[currentTextIndex];
 
-  if (isTyping) 
-    {
+  if (isTyping) {
     if (currentCharIndex < currentText.length) {
       rotatingText.textContent = currentText.substring(0, currentCharIndex + 1);
       currentCharIndex++;
-      setTimeout(typeWriter, 80); 
+      setTimeout(typeWriter, 80);
     } else {
       isTyping = false;
       isErasing = true;
       setTimeout(typeWriter, 2000); // Pause avant d'effacer
     }
-  } else if (isErasing) 
-    {
+  } else if (isErasing) {
     if (currentCharIndex > 0) {
       rotatingText.textContent = currentText.substring(0, currentCharIndex - 1);
       currentCharIndex--;
@@ -42,18 +39,20 @@ function typeWriter()
 }
 
 window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
+  const nav = document.querySelector("nav.main-nav");
 
-  if (window.scrollY > 50) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
+  if (nav) {
+    if (window.scrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
   }
 });
 
 setTimeout(typeWriter, 1000);
 
-//Menu Burger
+// Menu Burger
 
 const toggle = document.getElementById("menu-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -79,47 +78,49 @@ links.forEach(link => {
 document.addEventListener("DOMContentLoaded", () => {
 
   const track = document.querySelector(".testimonial-track");
-  const dots = document.querySelectorAll(".dot");
+  const testimonialDots = document.querySelectorAll(".dots .dot");
   const slides = document.querySelectorAll(".testimonial");
 
-  let currentIndex = 0;
-  let interval;
+  let testimonialIndex = 0;
+  let testimonialInterval;
 
   function updateSlider(index) {
     track.style.transform = `translateX(-${index * 100}%)`;
 
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
+    testimonialDots.forEach(dot => dot.classList.remove("active"));
+    testimonialDots[index].classList.add("active");
   }
 
   function changeSlide(index) {
-    currentIndex = index;
-    updateSlider(currentIndex);
+    testimonialIndex = index;
+    updateSlider(testimonialIndex);
     resetAutoSlide();
   }
 
   function startAutoSlide() {
-    interval = setInterval(() => {
-      currentIndex++;
-      if (currentIndex >= slides.length) {
-        currentIndex = 0;
+    testimonialInterval = setInterval(() => {
+      testimonialIndex++;
+      if (testimonialIndex >= slides.length) {
+        testimonialIndex = 0;
       }
-      updateSlider(currentIndex);
+      updateSlider(testimonialIndex);
     }, 4000);
   }
 
   function resetAutoSlide() {
-    clearInterval(interval);
+    clearInterval(testimonialInterval);
     startAutoSlide();
   }
 
   // click sur dots
-  dots.forEach((dot, index) => {
+  testimonialDots.forEach((dot, index) => {
     dot.addEventListener("click", () => {
       changeSlide(index);
     });
   });
 
+  // Expose changeSlide globally for inline onclick
+  window.changeSlide = changeSlide;
 
   startAutoSlide();
 
@@ -149,7 +150,7 @@ counters.forEach(counter => {
 
 //  le DOM pour le filtrage de la galerie
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
   const filterLinks = document.querySelectorAll('.filter-link');
 
@@ -158,18 +159,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // Ajouter un écouteur de clic sur chaque lien
 
   filterLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); 
-      
-   
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+
       filterLinks.forEach(l => l.classList.remove('active'));
-   
+
       this.classList.add('active');
-      
-      
+
+
       const filterValue = this.getAttribute('data-filter');
-      
-  
+
+
       portfolioItems.forEach(item => {
         if (filterValue === 'all') {
           item.style.display = 'block';
@@ -188,41 +189,132 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ==================== JS BLOG  ====================
-const slider = document.getElementById('blogSlider');
-const dotsContainer = document.getElementById('blogDots');
+document.addEventListener('DOMContentLoaded', function () {
+  const blogSlider = document.getElementById('blogSlider');
+  const blogDotsContainer = document.getElementById('blogDots');
 
-const cards = document.querySelectorAll('.blog-card');
-let currentIndex = 0;
+  if (!blogSlider || !blogDotsContainer) return;
 
-// nombre  possibles
-const visibleCards = 3;
-const maxIndex = cards.length - visibleCards;
+  const cards = document.querySelectorAll('.blog-card');
+  let blogCurrentIndex = 0;
 
-// créer les dots
-for (let i = 0; i <= maxIndex; i++) {
-  const dot = document.createElement('span');
-  dot.classList.add('dot');
-  if (i === 0) dot.classList.add('active');
+  // nombre possibles
+  const visibleCards = 3;
+  const maxIndex = Math.max(0, cards.length - visibleCards);
 
-  dot.addEventListener('click', () => moveTo(i));
-  dotsContainer.appendChild(dot);
-}
+  // créer les dots
+  for (let i = 0; i <= maxIndex; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('blog-dot');
+    if (i === 0) dot.classList.add('active');
 
-const dots = document.querySelectorAll('.dot');
+    dot.addEventListener('click', () => blogMoveTo(i));
+    blogDotsContainer.appendChild(dot);
+  }
 
-function moveTo(index) {
-  currentIndex = index;
+  const blogDots = blogDotsContainer.querySelectorAll('.blog-dot');
 
-  const cardWidth = cards[0].offsetWidth + 25;
-  slider.style.transform = `translateX(-${cardWidth * index}px)`;
+  function blogMoveTo(index) {
+    blogCurrentIndex = index;
 
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
+    const cardWidth = cards[0].offsetWidth + 25;
+    blogSlider.style.transform = `translateX(-${cardWidth * index}px)`;
 
-// autoplay
-setInterval(() => {
-  currentIndex++;
-  if (currentIndex > maxIndex) currentIndex = 0;
-  moveTo(currentIndex);
-}, 6000);
+    blogDots.forEach(dot => dot.classList.remove('active'));
+    blogDots[index].classList.add('active');
+  }
+
+  // autoplay
+  setInterval(() => {
+    blogCurrentIndex++;
+    if (blogCurrentIndex > maxIndex) blogCurrentIndex = 0;
+    blogMoveTo(blogCurrentIndex);
+  }, 6000);
+});
+
+
+// ==================== VIDEO MODAL ====================
+
+document.addEventListener('DOMContentLoaded', function () {
+  const playBtn = document.getElementById('video-play-btn');
+  const modal = document.getElementById('video-modal');
+  const closeBtn = document.getElementById('video-modal-close');
+  const iframe = document.getElementById('modal-video');
+
+  const youtubeVideoUrl = 'https://www.youtube.com/embed/NSAOrGb9orM?autoplay=1&rel=0';
+
+  if (!playBtn || !modal) return;
+
+  // Ouvrir le modal et lancer la vidéo
+  playBtn.addEventListener('click', function () {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    if (iframe) iframe.src = youtubeVideoUrl;
+  });
+
+  // Fermer avec le bouton X
+  closeBtn.addEventListener('click', function () {
+    closeModal();
+  });
+
+  // Fermer en cliquant à l'extérieur
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Fermer avec ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    // Vider le src pour arrêter la vidéo
+    if (iframe) iframe.src = '';
+  }
+});
+
+
+// ==================== MOBILE BOTTOM NAVBAR ====================
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('section[id]');
+  const mobileLinks = document.querySelectorAll('.mobile-bottom-nav a');
+
+  if (mobileLinks.length === 0) return;
+
+  // Highlight active link based on scroll position
+  window.addEventListener('scroll', function () {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    mobileLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Smooth scroll on mobile nav click
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+});
